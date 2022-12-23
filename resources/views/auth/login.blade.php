@@ -321,7 +321,8 @@
         <div class="signin">
             <div class="content">
                 <h2>SIGN IN</h2>
-                <form action="">
+                <form action="{{route('login-user')}}" method="post">
+                    @csrf
                     <div class="form">
                         <div class="inputBx">
                             <input type="text" required class="input">
