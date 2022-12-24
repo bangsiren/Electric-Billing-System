@@ -5,37 +5,54 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Hash;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class AuthController extends Controller
 {
     //
-    public function login() {
+    public function login()
+    {
         return view('auth.login');
     }
-    public function registration() {
+    public function registration()
+    {
         return view('auth.registration');
     }
-    public function registerUser(Request $request) {
+    public function registerUser(Request $request)
+    {
         $request->validate([
-        'name'=>'required',
-        'email'=>'required|email|unique:users',
-        'password'=>'required|min:5|max:12',
-      ]);
-      $user = new User();
-      $user->name = $request->name;
-      $user->email = $request->email;
-      $user->password = Hash::make($request->password);
-      $res = $user->save();
-      if($res){
-        return back()->with('success', 'Registered Successfully');
-      }else {
-        return back()->with('falied', 'Something Went Wrong');
-      }
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:5|max:12',
+        ]);
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $res = $user->save();
+        if ($res) {
+            return back()->with('success', 'Registered Successfully');
+        } else {
+            return back()->with('falied', 'Something Went Wrong');
+        }
     }
-    public function loginUser(Request $request) {
+    public function loginUser(Request $request)
+    {
         $request->validate([
-            'email'=>'required|email|unique:users',
-            'password'=>'required|min:5|max:12',
-          ]);
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:5|max:12',
+        ]);
+
+        $user = User::where('email', '=', $request->email)->first();
+        if ($user) {
+            if (Hash::check($request->password, $user->password)) {
+                $request->session()->put('loginId', $user->id);
+                return redirect('dashboard');
+            } else {
+                return back()->with("failed", "Password Not Match");
+            }
+        } else {
+            return back()->with("failed", "This is email is not registered");
+        }
     }
 }

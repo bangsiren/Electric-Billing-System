@@ -56,9 +56,11 @@
             transform: translateY(100%);
         }
     }
-.error {
-    color: red
-}
+
+    .error {
+        color: red
+    }
+
     section span {
         position: relative;
         display: block;
@@ -109,12 +111,28 @@
         flex-direction: column;
         gap: 25px;
     }
+
     form {
         width: 100%;
     }
+
     section .signin .content .form .inputBx {
         position: relative;
         width: 100%;
+    }
+
+    .success {
+        color: #0f0;
+        background: black;
+        padding: .8rem .2rem;
+        margin-bottom: 1rem
+    }
+
+    .err {
+        color: red;
+        background: black;
+        padding: .8rem .2rem;
+        margin-bottom: 1rem
     }
 
     section .signin .content .form .inputBx .input {
@@ -324,16 +342,23 @@
             <div class="content">
                 <h2>SIGN IN</h2>
                 <form action="{{route('login-user')}}" method="post">
+                    @if(Session::has('success'))
+                    <div class="success">{{Session::get('success')}}</div>
+                    @endif
+                    @if(Session::has('failed'))
+                    <div class="err">{{Session::get('failed')}}</div>
+                    @endif
                     @csrf
                     <div class="form">
                         <div class="inputBx">
-                            <input type="text"  class="input" name="name" value="{{old('name')}}">
-                            <p class="error">@error('email') {{$message}}  @enderror</p>
+                            <input type="text" autocomplete="off" class="input" name="email" value="{{old('email')}}">
+                            <p class="error">@error('email') {{$message}} @enderror</p>
                             <i>Username</i>
                         </div>
                         <div class="inputBx">
-                            <input type="password"  class="input" name="password" value="{{old('password')}}">
-                            <p class="error">@error('password') {{$message}}  @enderror</p>
+                            <input type="password" autoComplete="new-password" class="input" name="password"
+                                value="{{old('password')}}">
+                            <p class="error">@error('password') {{$message}} @enderror</p>
                             <i>Password</i>
                         </div>
                         <div class="links">

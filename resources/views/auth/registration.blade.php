@@ -332,8 +332,8 @@
                     @if(Session::has('success'))
                     <div class="success">{{Session::get('success')}}</div>
                     @endif
-                    @if(Session::has('falied'))
-                    <div class="error">{{Session::get('falied')}}</div>
+                    @if(Session::has('failed'))
+                    <div class="error">{{Session::get('failed')}}</div>
                     @endif
                     @csrf
                     <div class="form">
