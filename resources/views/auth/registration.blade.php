@@ -338,17 +338,17 @@
                     @csrf
                     <div class="form">
                         <div class="inputBx">
-                            <input type="text" class="input" value="{{old('name')}}">
+                            <input type="text" class="input" name="name" value="{{old('name')}}">
                             <p class="error">@error('name') {{$message}}  @enderror</p>
                             <i>Name</i>
                         </div>
                         <div class="inputBx">
-                            <input type="email" class="input"  value="{{old('email')}}">
+                            <input type="email" class="input" name="email" value="{{old('email')}}">
                             <p class="error">@error('email') {{$message}}  @enderror</p>
                             <i>Email</i>
                         </div>
                         <div class="inputBx">
-                            <input type="password" class="input"  value="{{old('password')}}">
+                            <input type="password" class="input" name="password" value="{{old('password')}}">
                             <p class="error">@error('password') {{$message}}  @enderror</p>
                             <i>Password</i>
                         </div>
