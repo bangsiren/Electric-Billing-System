@@ -11,6 +11,34 @@
 </head>
 
 <body>
+
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6 " style="margin-top:20px">
+         <h4>Welcome To Dashboard</h4>
+         <br>
+         <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{$data->name}}</th>
+                <td>{{$data->email}}</td>
+                <td><a href="logout">Logout</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
+
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
