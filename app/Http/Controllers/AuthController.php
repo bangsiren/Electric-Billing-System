@@ -32,4 +32,10 @@ class AuthController extends Controller
         return back()->with('falied', 'Something Went Wrong');
       }
     }
+    public function loginUser(Request $request) {
+        $request->validate([
+            'email'=>'required|email|unique:users',
+            'password'=>'required|min:5|max:12',
+          ]);
+    }
 }

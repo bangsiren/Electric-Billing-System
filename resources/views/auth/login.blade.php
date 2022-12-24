@@ -56,7 +56,9 @@
             transform: translateY(100%);
         }
     }
-
+.error {
+    color: red
+}
     section span {
         position: relative;
         display: block;
@@ -325,11 +327,13 @@
                     @csrf
                     <div class="form">
                         <div class="inputBx">
-                            <input type="text" required class="input">
+                            <input type="text"  class="input" name="name" value="{{old('name')}}">
+                            <p class="error">@error('email') {{$message}}  @enderror</p>
                             <i>Username</i>
                         </div>
                         <div class="inputBx">
-                            <input type="password" required class="input">
+                            <input type="password"  class="input" name="password" value="{{old('password')}}">
+                            <p class="error">@error('password') {{$message}}  @enderror</p>
                             <i>Password</i>
                         </div>
                         <div class="links">
