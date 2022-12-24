@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Hash;
-use Symfony\Component\HttpFoundation\Session\Session;
+use Session;
 
 class AuthController extends Controller
 {
@@ -39,7 +39,7 @@ class AuthController extends Controller
     public function loginUser(Request $request)
     {
         $request->validate([
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email',
             'password' => 'required|min:5|max:12',
         ]);
 
@@ -54,5 +54,8 @@ class AuthController extends Controller
         } else {
             return back()->with("failed", "This is email is not registered");
         }
+    }
+    public function dashboard() {
+        return view('dashboard');
     }
 }
