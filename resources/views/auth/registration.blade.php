@@ -352,6 +352,11 @@
                             <p class="error">@error('password') {{$message}}  @enderror</p>
                             <i>Password</i>
                         </div>
+                        <div class="inputBx">
+                            <input type="password" class="input" name="password_confirmation" value="{{old('password_confirmation')}}">
+                            <p class="error">@error('password') {{$message}}  @enderror</p>
+                            <i>Password</i>
+                        </div>
             
                         <div class="links">
                             <a href="#">Already Have An Account? </a>
