@@ -19,7 +19,6 @@ return new class extends Migration
             $table->integer('age');
             $table->string('email')->unique();
             $table->string('password');
-            <$table->string('password_confirmation');
             $table->timestamps();
         });
     }
