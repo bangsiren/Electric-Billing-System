@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BillingController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,5 +26,6 @@ Route::get('/logout', [AuthController::class, 'logout']);
 Route::post('/register-user', [AuthController::class, 'registerUser'])->name('register-user');
 Route::post('/login-user', [AuthController::class, 'loginUser'])->name('login-user');
 Route::get('/admin-login', [AuthController::class, 'adminLogin']);
-Route::get('/bills', [AuthController::class, 'show']);
-Route::post('/allBills', [AuthController::class, 'show']);
+Route::get('/billing-form', [BillingController::class, 'createBills']);
+Route::get('/bills', [BillingController::class, 'show']);
+Route::post('/allBills', [BillingController::class, 'show']);
