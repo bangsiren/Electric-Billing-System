@@ -23,5 +23,6 @@ Route::get('/dashboard', [AuthController::class, 'dashboard'])->middleware('isLo
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::post('/register-user', [AuthController::class, 'registerUser'])->name('register-user');
 Route::post('/login-user', [AuthController::class, 'loginUser'])->name('login-user');
+Route::get('/admin-login', [AuthController::class, 'adminLogin']);
 Route::get('/bills', [AuthController::class, 'show']);
 Route::post('/allBills', [AuthController::class, 'show']);

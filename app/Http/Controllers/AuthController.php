@@ -74,4 +74,7 @@ class AuthController extends Controller
             return redirect('login');
         }
     }
+    public function adminLogin() {
+       return view('auth.login-admin');
+    }
 }
