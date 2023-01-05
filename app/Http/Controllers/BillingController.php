@@ -7,10 +7,13 @@ use Illuminate\Http\Request;
 class BillingController extends Controller
 {
     //
-    public function show() {
+    // public function show() {
+    //     return view('bills');
+    // }
+    public function bills() {
         return view('bills');
     }
-    public function createBills() {
-        return view('billing-form');
+    public function showCreateBills() {
+        return view('admin');
     }
 }

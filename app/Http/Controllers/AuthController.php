@@ -27,6 +27,7 @@ class AuthController extends Controller
             'password' => 'required|confirmed|min:5|max:12',
 
         ]);
+
         $user = new User();
         $user->name = $request->name;
         $user->age = $request->age;
@@ -63,7 +64,7 @@ class AuthController extends Controller
     {
         $data = array();
         if (Session::has('loginId')) {
-            $data = User::where('id', '=', Session::get('loginId'))->first();
+            $data = User::where('id', '=',  Session::get('loginId'))->first();
         }
         return view('dashboard', compact('data'));
     }
@@ -74,7 +75,8 @@ class AuthController extends Controller
             return redirect('login');
         }
     }
-    public function adminLogin() {
-       return view('auth.login-admin');
+    public function adminLogin()
+    {
+        return view('auth.login-admin');
     }
 }
