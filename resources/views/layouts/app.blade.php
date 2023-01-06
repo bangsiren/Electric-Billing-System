@@ -20,10 +20,14 @@
     <link href="{{ URL::asset('css/common.css') }}" rel="stylesheet">
     @yield('custom_css')
 </head>
+<style>
+    #app {
+        width: 100%;
+        height: 100vh;
+    }
+</style>
 <body>
     <div id="app">
-     
-
         @yield('content')
     </div>
 
