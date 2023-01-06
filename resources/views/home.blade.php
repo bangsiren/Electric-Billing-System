@@ -60,7 +60,6 @@
         .title {
             font-size: 84px;
         }
-
         .links>a {
             color: #cdcdcd;
             padding: 0 25px;

@@ -17,12 +17,12 @@ use App\Http\Controllers\BillingController;
 
 Route::get('/', [BillingController::class, 'index']);
 Route::get('/login', [AuthController::class, 'login'])->middleware('alreadyLogin');
-Route::get('/registration', [AuthController::class, 'registration'])->middleware('alreadyLogin');
+Route::get('/register', [AuthController::class, 'registration'])->middleware('alreadyLogin');
 Route::get('/dashboard', [AuthController::class, 'dashboard'])->middleware('isLoggedIn');
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::post('/register-user', [AuthController::class, 'registerUser'])->name('register-user');
 Route::post('/login-user', [AuthController::class, 'loginUser'])->name('login-user');
-Route::get('/admin-login', [AuthController::class, 'adminLogin']);
+Route::get('/admin/login', [AuthController::class, 'adminLogin']);
 Route::get('/admin', [BillingController::class, 'showCreateBills']);
 Route::get('/bills', [BillingController::class, 'bills']);
 Route::post('/allBills', [BillingController::class, 'show']);

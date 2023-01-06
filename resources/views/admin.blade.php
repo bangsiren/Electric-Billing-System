@@ -1,9 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+<style>
+    .contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+  }
+  .box {
+    width: 100%;
+  }
+  .first-box {
+    width: 50%;
+  }
+</style>
+<div class="container contain">
+  <div class="row first-box">
+    <div class="col-md-8 col-md-offset-2 box mt-5">
       <div class="card rounded-0 shadow text-reset">
         <div class="card-header">
           <div class="card-title h3 my-2 text-center fw-bold">Welcome, Administrator!</div>

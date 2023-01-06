@@ -1,4 +1,5 @@
-{{-- <!doctype html>
+{{--
+<!doctype html>
 <html lang="{{ app()->getLocale() }}">
 
 <head>
@@ -159,18 +160,20 @@
             @else --}}
 
             <li>
-                <a href="/register" class="hover:text-back text-white px-2"><i class="fa-solid fa-user-plus"></i> Register</a>
+                <a href="/register" class="hover:text-back text-white px-2"><i class="fa-solid fa-user-plus"></i>
+                    Register</a>
             </li>
             <li>
-                <a href="/login" class="hover:text-back text-white px-2"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <a href="/login" class="hover:text-back text-white px-2"><i
+                        class="fa-solid fa-arrow-right-to-bracket"></i>
                     Login</a>
             </li>
             {{-- @endauth --}}
         </ul>
     </nav>
-    
+
     <main>
-       {{$slot}}
+        {{$slot}}
     </main>
 
     <footer
@@ -178,7 +181,8 @@
         <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
 
         <a href="/listings/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">Add Bills</a>
-        {{-- <x-flash-message />
+        {{--
+        <x-flash-message />
         <x-failed-message /> --}}
     </footer>
 </body>

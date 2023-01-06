@@ -1,20 +1,20 @@
-@extends('layouts.app')
+<x-layout>
+  @extends('layouts.app')
 
 @section('content')
 <style>
   .contain {
-    background: red;
     display: flex;
     justify-content: center;
     align-items: center;
     justify-items: center;
   }
-
   .box {
     width: 100%;
   }
 </style>
 <div class="container contain">
+  
   <div class="row bg-dark mt-4">
     <div class="col-md-8  col-md-offset-2 box">
       <div class="card rounded-0  shadow text-reset">
@@ -163,3 +163,4 @@
   </div>
 </div>
 @endsection
+</x-layout>

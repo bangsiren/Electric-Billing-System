@@ -353,6 +353,11 @@
                             <i>Email</i>
                         </div>
                         <div class="inputBx">
+                            <input type="text" class="input" name="address" value="{{old('address')}}">
+                            <p class="error">@error('address') {{$message}}  @enderror</p>
+                            <i>Address</i>
+                        </div>
+                        <div class="inputBx">
                             <input type="password" class="input" name="password" value="{{old('password')}}">
                             <p class="error">@error('password') {{$message}}  @enderror</p>
                             <i>Password</i>
