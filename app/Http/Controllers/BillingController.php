@@ -18,4 +18,7 @@ class BillingController extends Controller
     {
         return view('admin');
     }
+    public function index() {
+        return view('home');
+    }
 }
