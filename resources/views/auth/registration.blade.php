@@ -349,9 +349,9 @@
                             <i>Name</i>
                         </div>
                         <div class="inputBx">
-                            <input type="number" class="input" name="age" value="{{old('age')}}">
-                            <p class="error">@error('age') {{$message}} @enderror</p>
-                            <i>Age</i>
+                            <input type="number" class="input" name="connectionId" value="{{old('connectionId')}}">
+                            <p class="error">@error('connectionId') {{$message}} @enderror</p>
+                            <i>ConnectionId</i>
                         </div>
                         <div class="inputBx">
                             <input type="email" class="input" name="email" value="{{old('email')}}">
