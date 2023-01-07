@@ -43,7 +43,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background: linear-gradient(#000, #0f0, #000);
+        background: linear-gradient(#000, #317874, #000);
         animation: animat 3s linear infinite;
     }
 
@@ -69,7 +69,7 @@
     }
 
     section span:hover {
-        background-color: #0f0;
+        background-color: #317874;
     }
 
     section .signin {
@@ -97,7 +97,7 @@
 
     section .signin .content h2 {
         font-size: 2em;
-        color: #0f0;
+        color: #317874;
         text-transform: uppercase;
     }
 
@@ -107,16 +107,20 @@
         flex-direction: column;
         gap: 25px;
     }
+
     form {
         width: 100%;
     }
+
     section .signin .content .form .inputBx {
         position: relative;
         width: 100%;
     }
+
     .error {
         color: red;
     }
+
     section .signin .content .form .inputBx .input {
         position: relative;
         width: 96%;
@@ -139,12 +143,14 @@
         transition: 1s;
         pointer-events: none;
     }
-.success {
-    color: #0f0;
-    background: black;
-    padding: .8rem .2rem;
-    margin-bottom: 1rem
-}
+
+    .success {
+        color: #317874;
+        background: black;
+        padding: .8rem .2rem;
+        margin-bottom: 1rem
+    }
+
     .signin .content .form .inputBx .input:focus~i,
     .signin .content .form .inputBx .input:valid~i {
         transform: translateY(-7.5px);
@@ -165,13 +171,13 @@
     }
 
     .signin .content .form .links a:nth-child(2) {
-        color: #0f0;
+        color: #317874;
         font-weight: 600;
     }
 
     .signin .content .form .inputBx .input[type="submit"] {
         padding: 10px;
-        background: #0f0;
+        background: #317874;
         color: #111;
         font-weight: 600;
         font-size: 1.25em;
@@ -339,35 +345,36 @@
                     <div class="form">
                         <div class="inputBx">
                             <input type="text" class="input" name="name" value="{{old('name')}}">
-                            <p class="error">@error('name') {{$message}}  @enderror</p>
+                            <p class="error">@error('name') {{$message}} @enderror</p>
                             <i>Name</i>
                         </div>
                         <div class="inputBx">
                             <input type="number" class="input" name="age" value="{{old('age')}}">
-                            <p class="error">@error('age') {{$message}}  @enderror</p>
+                            <p class="error">@error('age') {{$message}} @enderror</p>
                             <i>Age</i>
                         </div>
                         <div class="inputBx">
                             <input type="email" class="input" name="email" value="{{old('email')}}">
-                            <p class="error">@error('email') {{$message}}  @enderror</p>
+                            <p class="error">@error('email') {{$message}} @enderror</p>
                             <i>Email</i>
                         </div>
                         <div class="inputBx">
                             <input type="text" class="input" name="address" value="{{old('address')}}">
-                            <p class="error">@error('address') {{$message}}  @enderror</p>
+                            <p class="error">@error('address') {{$message}} @enderror</p>
                             <i>Address</i>
                         </div>
                         <div class="inputBx">
                             <input type="password" class="input" name="password" value="{{old('password')}}">
-                            <p class="error">@error('password') {{$message}}  @enderror</p>
+                            <p class="error">@error('password') {{$message}} @enderror</p>
                             <i>Password</i>
                         </div>
                         <div class="inputBx">
-                            <input type="password" class="input" name="password_confirmation" value="{{old('password_confirmation')}}">
-                            <p class="error">@error('password') {{$message}}  @enderror</p>
+                            <input type="password" class="input" name="password_confirmation"
+                                value="{{old('password_confirmation')}}">
+                            <p class="error">@error('password') {{$message}} @enderror</p>
                             <i>Password</i>
                         </div>
-            
+
                         <div class="links">
                             <a href="#">Already Have An Account? </a>
                             <a href="login">Sign in</a>

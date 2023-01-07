@@ -23,14 +23,14 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required',
             'age' => 'required',
+            'address' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed|min:5|max:12',
-
         ]);
-
         $user = new User();
         $user->name = $request->name;
         $user->age = $request->age;
+        $user->address = $request->address;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $res = $user->save();
