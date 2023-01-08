@@ -363,7 +363,7 @@
                         </div>
                         <div class="links">
                             <a href="#">Does Not Have An Account? </a>
-                            <a href="registration">Register</a>
+                            <a href="/register">Register</a>
                         </div>
                         <div class="inputBx">
                             <input type="submit" required value="Login" class="input">
