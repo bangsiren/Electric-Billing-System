@@ -76,7 +76,7 @@
     <div class="col-md-8  col-md-offset-2 box">
       <div class="card rounded-0  shadow text-reset">
         <div class="card-header">
-          <div class="card-title h3 my-2 text-center">Welcome, Admin!</div>
+          <div class="card-title h3 my-2 text-center">Welcome, {{$data->name}}!</div>
         </div>
 
         <div class="card-body">
