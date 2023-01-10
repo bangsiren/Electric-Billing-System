@@ -34,8 +34,7 @@
             @endif
 
 
-            <form class="form-horizontal" action="/add-bill" method="POST">
-
+            <form class="form-horizontal" action="/add-bill" method="post">
               @if(Session::has('success'));
               <div class="success">{{Session::get('success')}}</div>
               @endif
@@ -118,7 +117,7 @@
                   <!-- Button -->
                   <div class="mb-3">
                     <div class="d-grid">
-                      <button type="submit" class="btn btn-primary bg-gradient rounded-0">Submit</button>
+                      <input type="submit" value="Submit" class="btn btn-primary bg-gradient rounded-0">
                     </div>
                   </div>
                 </div>
@@ -143,6 +142,7 @@
                   <!-- Button -->
                   <div class="mb-3">
                     <div class="d-grid">
+                      
                       <button type="submit" class="btn btn-primary bg-gradient rounded-0">Update</button>
                     </div>
                   </div>

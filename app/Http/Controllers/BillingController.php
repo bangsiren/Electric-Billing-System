@@ -37,11 +37,11 @@ class BillingController extends Controller
          $bill->final=$request->final;
          $bill->month=$request->month;
          $bill->year=$request->year;
-         $bill->units=(integer)$bill->final-(integer)$bill->initial;
-         $admin=DB::table('admins')->first();
-         $rate=$admin->rate;
-         $bill->amount=$bill->units * $rate;
-         $bill->status="Unpaid";
+        //  $bill->units=(integer)$bill->final-(integer)$bill->initial;
+        //  $admin=DB::table('admins')->first();
+        //  $rate=$admin->rate;
+        //  $bill->amount=$bill->units * $rate;
+        //  $bill->status="Unpaid";
          $bill->save();
 
          if ($bill) {
