@@ -2,15 +2,17 @@
 
 @section('content')
 <style>
-    .contain {
+  .contain {
     display: flex;
     justify-content: center;
     align-items: center;
     justify-items: center;
   }
+
   .box {
     width: 100%;
   }
+
   .first-box {
     width: 50%;
   }
@@ -32,7 +34,8 @@
             @endif
 
 
-            <form class="form-horizontal" action="{{rout('add-bill')}}" method="POST">
+            <form class="form-horizontal" action="/add-bill" method="POST">
+
               @if(Session::has('success'));
               <div class="success">{{Session::get('success')}}</div>
               @endif
@@ -51,14 +54,16 @@
                     <label class="control-label" for="customerId">Customer Id</label>
                     <input id="customerId" name="customerId" placeholder="" class="form-control rounded-0" required=""
                       type="text">
+                    <p class="error">@error('customerId') {{$message}} @enderror</p>
                   </div>
 
                   <!-- Text input-->
-                  
+
                   <div class="mb-3">
                     <label class="control-label" for="initial">Initial Reading</label>
                     <input id="initial" name="initial" placeholder="" class="form-control rounded-0 text-end"
                       required="" type="number" step="any">
+                    <p class="error">@error('number') {{$message}} @enderror</p>
                   </div>
 
                   <!-- Text input-->
@@ -66,6 +71,7 @@
                     <label class="control-label" for="final">Final Reading</label>
                     <input id="final" name="final" placeholder="" class="form-control rounded-0 text-end" required=""
                       type="number" step="any">
+                    <p class="error">@error('final') {{$message}} @enderror</p>
                   </div>
 
                   <!-- Select Basic -->
@@ -86,6 +92,7 @@
                         <option value="November">November</option>
                         <option value="Decemeber">Decemeber</option>
                       </select>
+                      <p class="error">@error('month') {{$message}} @enderror</p>
                     </div>
                   </div>
 
@@ -103,6 +110,7 @@
                           @php
                           endfor;
                           @endphp
+                          <p class="error">@error('year') {{$message}} @enderror</p>
                       </select>
                     </div>
                   </div>
