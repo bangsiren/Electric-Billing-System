@@ -81,11 +81,13 @@
 
         <div class="card-body">
           <div class="container-fluid">
-            @if (session('status'))
-            <div class="alert alert-success">
-              {{ session('status') }}
-            </div>
-            @endif
+            @if(Session::has('success'))
+                    <div class="success">{{Session::get('success')}}</div>
+                    @endif
+                    @if(Session::has('failed'))
+                    <div class="error">{{Session::get('failed')}}</div>
+                    @endif
+                    @csrf
             <fieldset class="border pb-2">
               <legend class="w-auto mx-3 border-0 mb-0 px-4">Your Details</legend>
               <div class="container-fluid">
