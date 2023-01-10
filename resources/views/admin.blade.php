@@ -33,7 +33,14 @@
 
 
             <form class="form-horizontal" action="" method="POST">
-              {{ csrf_field() }}
+              @if(Session::has('success'))
+              <div class="success">{{Session::get('success')}}</div>
+              @endif
+              @if(Session::has('failed'))
+              <div class="error">{{Session::get('failed')}}</div>
+              @endif
+              @csrf
+              {{-- {{ csrf_field() }} --}}
               <fieldset class="border pb-3 mb-3">
                 <!-- Form Name -->
                 <legend class="w-auto mx-3 px-4 border-0 mt-n4 h4 fw-bolder">New Bill Entry</legend>
