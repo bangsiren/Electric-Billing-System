@@ -43,5 +43,11 @@ class BillingController extends Controller
          $bill->amount=$bill->units * $rate;
          $bill->status="Unpaid";
          $bill->save();
+
+         if ($bill) {
+            return back()->with('success', 'Registered Successfully');
+        } else {
+            return back()->with('falied', 'Something Went Wrong');
+        }
     }
 }
