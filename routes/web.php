@@ -22,8 +22,10 @@ Route::get('/dashboard', [AuthController::class, 'dashboard'])->middleware('isLo
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::post('/register-user', [AuthController::class, 'registerUser'])->name('register-user');
 Route::post('/login-user', [AuthController::class, 'loginUser'])->name('login-user');
+Route::post('/add-bills', [BillingController::class, 'addBill'])->name('add-bills');
 Route::get('/admin/login', [AuthController::class, 'adminLogin']);
-Route::post('/add-bill', [BillingController::class, 'addBill']);
-Route::get('/admin', [BillingController::class, 'showCreateBills']);
+Route::get('/bills/create', [BillingController::class, 'showCreateBills']);
 Route::get('/bills', [BillingController::class, 'bills']);
+
+
 // Route::post('/allBills', [BillingController::class, 'show']);

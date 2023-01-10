@@ -16,6 +16,9 @@
   .first-box {
     width: 50%;
   }
+  .error {
+    color: red;
+  }
 </style>
 <div class="container contain">
   <div class="row first-box">
@@ -34,41 +37,43 @@
             @endif
 
 
-            <form class="form-horizontal" action="/add-bill" method="post">
+            <form method="POST" action="{{ route('add-bills') }}">
+
               @if(Session::has('success'));
               <div class="success">{{Session::get('success')}}</div>
               @endif
               @if(Session::has('failed'))
               <div class="error">{{Session::get('failed')}}</div>
               @endif
+              
               @csrf
               {{-- {{ csrf_field() }} --}}
-              <fieldset class="border pb-3 mb-3">
+              {{-- <fieldset class="border pb-3 mb-3"> --}}
                 <!-- Form Name -->
-                <legend class="w-auto mx-3 px-4 border-0 mt-n4 h4 fw-bolder">New Bill Entry</legend>
+                {{-- <legend class="w-auto mx-3 px-4 border-0 mt-n4 h4 fw-bolder">New Bill Entry</legend> --}}
 
                 <div class="container-fluid">
                   <!-- Text input-->
                   <div class="mb-3">
                     <label class="control-label" for="customerId">Customer Id</label>
-                    <input id="customerId" name="customerId" placeholder="" class="form-control rounded-0" required=""
+                    <input id="customerId" name="customerId" placeholder="" class="form-control rounded-0" value="{{old('customerId')}}"
                       type="text">
-                    <p class="error">@error('customerId') {{$message}} @enderror</p>
+                      <p class="error">@error('initial') {{$message}} @enderror</p>
                   </div>
 
                   <!-- Text input-->
 
                   <div class="mb-3">
                     <label class="control-label" for="initial">Initial Reading</label>
-                    <input id="initial" name="initial" placeholder="" class="form-control rounded-0 text-end"
-                      required="" type="number" step="any">
-                    <p class="error">@error('number') {{$message}} @enderror</p>
+                    <input id="initial" name="initial" placeholder="" value="{{old('initial')}}" class="form-control rounded-0 text-end"
+                      type="number" step="any">
+                    <p class="error">@error('initial') {{$message}} @enderror</p>
                   </div>
 
                   <!-- Text input-->
                   <div class="mb-3">
                     <label class="control-label" for="final">Final Reading</label>
-                    <input id="final" name="final" placeholder="" class="form-control rounded-0 text-end" required=""
+                    <input id="final" name="final" placeholder="" value="{{old('final')}}" class="form-control rounded-0 text-end" 
                       type="number" step="any">
                     <p class="error">@error('final') {{$message}} @enderror</p>
                   </div>
@@ -121,10 +126,10 @@
                     </div>
                   </div>
                 </div>
-              </fieldset>
+              {{-- </fieldset> --}}
             </form>
             <form class="form-inline" action="" method="POST">
-              {{ csrf_field() }}
+              @csrf
 
               <fieldset class="border pb-3 mb-3">
 
@@ -136,7 +141,7 @@
                   <!-- Text input-->
                   <div class="mb-3">
                     <label class="control-label" for="rate">New Rate</label>
-                    <input id="rate" name="rate" placeholder="" class="form-control rounded-0 text-end" required=""
+                    <input id="rate" name="rate" placeholder="" class="form-control rounded-0 text-end"
                       type="number" step="any">
                   </div>
                   <!-- Button -->
