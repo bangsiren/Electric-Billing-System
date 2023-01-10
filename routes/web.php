@@ -25,5 +25,5 @@ Route::post('/login-user', [AuthController::class, 'loginUser'])->name('login-us
 Route::get('/admin/login', [AuthController::class, 'adminLogin']);
 Route::get('/admin', [BillingController::class, 'showCreateBills']);
 Route::get('/bills', [BillingController::class, 'bills']);
-Route::get('/add-bill', [BillingController::class, 'addBill']);
+Route::post('/add-bill', [BillingController::class, 'addBill']);
 Route::post('/allBills', [BillingController::class, 'show']);

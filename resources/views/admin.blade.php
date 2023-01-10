@@ -32,8 +32,8 @@
             @endif
 
 
-            <form class="form-horizontal" action="" method="POST">
-              @if(Session::has('success'))
+            <form class="form-horizontal" action="{{rout('add-bill')}}" method="POST">
+              @if(Session::has('success'));
               <div class="success">{{Session::get('success')}}</div>
               @endif
               @if(Session::has('failed'))
@@ -54,6 +54,7 @@
                   </div>
 
                   <!-- Text input-->
+                  
                   <div class="mb-3">
                     <label class="control-label" for="initial">Initial Reading</label>
                     <input id="initial" name="initial" placeholder="" class="form-control rounded-0 text-end"
