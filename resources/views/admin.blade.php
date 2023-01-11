@@ -58,7 +58,7 @@
                     <label class="control-label" for="customerId">Customer Id</label>
                     <input id="customerId" name="customerId" placeholder="" class="form-control rounded-0" value="{{old('customerId')}}"
                       type="text">
-                      <p class="error">@error('initial') {{$message}} @enderror</p>
+                      <p class="error">@error('customerId') {{$message}} @enderror</p>
                   </div>
 
                   <!-- Text input-->
