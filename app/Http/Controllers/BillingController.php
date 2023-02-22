@@ -49,6 +49,7 @@ class BillingController extends Controller
         $res = $bill->save();
         if ($res) {
             return back()->with('success', 'Registered Successfully');
+            var_dump($res);
         } else {
             return back()->with('falied', 'Something Went Wrong');
         }
