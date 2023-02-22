@@ -24,9 +24,10 @@ class BillingController extends Controller
     {
         return view('home');
     }
-    
+
     public function addBill(Request  $request)
     {
+        // dd($request);
         $request->validate([
             'connectionId' => 'required|min:5|max:10',
             'initial' => 'required',
@@ -34,17 +35,17 @@ class BillingController extends Controller
             'month' => 'required',
             'year' => 'required'
         ]);
-        $bill = new Bill;
-        $bill->customerId = $request->connectionId;
+        $bill = new Bill();
+        $bill->connectionId = $request->connectionId;
         $bill->initial = $request->initial;
         $bill->final = $request->final;
         $bill->month = $request->month;
         $bill->year = $request->year;
-         $bill->units=(integer)$bill->final-(integer)$bill->initial;
-         $admin=DB::table('admins')->first();
-         $rate=$admin->rate;
-         $bill->amount=$bill->units * $rate;
-         $bill->status="Unpaid";
+        $bill->units = (int)$bill->final - (int)$bill->initial;
+        $admin = DB::table('admins')->first();
+        $rate = $admin->rate;
+        $bill->amount = $bill->units * $rate;
+        $bill->status = "Unpaid";
         $res = $bill->save();
         if ($res) {
             return back()->with('success', 'Registered Successfully');

@@ -20,13 +20,14 @@ class AuthController extends Controller
     }
     public function registerUser(Request $request)
     {
+        // dd($request);
         $request->validate([
             'name' => 'required',
             'address' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed|min:5|max:12',
         ]);
-        $user = new User();
+        $user = new User;
         $user->name = $request->name;
         $user->address = $request->address;
         $user->email = $request->email;

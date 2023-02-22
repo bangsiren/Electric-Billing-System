@@ -30,14 +30,14 @@
 
         <div class="card-body">
           <div class="container-fluid">
-            @if (session('status'))
+            {{-- @if (session('status'))
             <div class="alert alert-success">
               {{ session('status') }}
             </div>
-            @endif
+            @endif --}}
 
 
-            <form method="POST" action="{{ route('add-bills') }}">
+            <form action="{{ route('add-bills') }}" method="post">
 
               @if(Session::has('success'));
               <div class="success">{{Session::get('success')}}</div>
@@ -56,7 +56,7 @@
                   <!-- Text input-->
                   <div class="mb-3">
                     <label class="control-label" for="customerId">Customer Id</label>
-                    <input id="customerId" name="customerId" placeholder="" class="form-control rounded-0" value="{{old('customerId')}}"
+                    <input name="customerId" placeholder="" class="form-control rounded-0" value="{{old('customerId')}}"
                       type="text">
                       <p class="error">@error('customerId') {{$message}} @enderror</p>
                   </div>
@@ -65,7 +65,7 @@
 
                   <div class="mb-3">
                     <label class="control-label" for="initial">Initial Reading</label>
-                    <input id="initial" name="initial" placeholder="" value="{{old('initial')}}" class="form-control rounded-0 text-end"
+                    <input  name="initial" placeholder="" value="{{old('initial')}}" class="form-control rounded-0 text-end"
                       type="number" step="any">
                     <p class="error">@error('initial') {{$message}} @enderror</p>
                   </div>
@@ -73,7 +73,7 @@
                   <!-- Text input-->
                   <div class="mb-3">
                     <label class="control-label" for="final">Final Reading</label>
-                    <input id="final" name="final" placeholder="" value="{{old('final')}}" class="form-control rounded-0 text-end" 
+                    <input  name="final" placeholder="" value="{{old('final')}}" class="form-control rounded-0 text-end" 
                       type="number" step="any">
                     <p class="error">@error('final') {{$message}} @enderror</p>
                   </div>
@@ -122,7 +122,7 @@
                   <!-- Button -->
                   <div class="mb-3">
                     <div class="d-grid">
-                      <input type="submit" value="Submit" class="btn btn-primary bg-gradient rounded-0">
+                      <button type="submit" class="btn btn-primary bg-gradient rounded-0">Submit</button>
                     </div>
                   </div>
                 </div>

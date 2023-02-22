@@ -348,11 +348,11 @@
                             <p class="error">@error('name') {{$message}} @enderror</p>
                             <i>Name</i>
                         </div>
-                        <div class="inputBx">
+                        {{-- <div class="inputBx">
                             <input type="number" class="input" name="connectionId" value="{{old('connectionId')}}">
                             <p class="error">@error('connectionId') {{$message}} @enderror</p>
                             <i>ConnectionId</i>
-                        </div>
+                        </div> --}}
                         <div class="inputBx">
                             <input type="email" class="input" name="email" value="{{old('email')}}">
                             <p class="error">@error('email') {{$message}} @enderror</p>
