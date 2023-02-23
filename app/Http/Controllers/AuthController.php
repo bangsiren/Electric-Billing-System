@@ -35,8 +35,10 @@ class AuthController extends Controller
         $res = $user->save();
         if ($res) {
             return back()->with('success', 'Registered Successfully');
+            var_dump($res);
         } else {
             return back()->with('falied', 'Something Went Wrong');
+
         }
     }
     public function loginUser(Request $request)
