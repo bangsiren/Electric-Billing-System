@@ -76,7 +76,7 @@
     <div class="col-md-8  col-md-offset-2 box">
       <div class="card rounded-0  shadow text-reset">
         <div class="card-header">
-          <div class="card-title h3 my-2 text-center">Welcome, {{$data->name}}!</div>
+          <div class="card-title h3 my-2 text-center">Welcome, {{$user->name}}!</div>
         </div>
 
         <div class="card-body">
@@ -93,19 +93,19 @@
                 <div class="lh-1">
                   <dl class="d-flex w-100 my-0">
                     <dt class="col-auto pe-2">Connection ID:</dt>
-                    <dd class="col-auto flex-shrink-1 flex-grow-1">{{$data->connectionId}}</dd>
+                    <dd class="col-auto flex-shrink-1 flex-grow-1">{{$user->id}}</dd>
                   </dl>
                   <dl class="d-flex w-100 my-0">
                     <dt class="col-auto pe-2">Name:</dt>
-                    <dd class="col-auto flex-shrink-1 flex-grow-1">{{$data->name}}</dd>
+                    <dd class="col-auto flex-shrink-1 flex-grow-1">{{$user->name}}</dd>
                   </dl>
                   <dl class="d-flex w-100 my-0">
                     <dt class="col-auto pe-2">Email:</dt>
-                    <dd class="col-auto flex-shrink-1 flex-grow-1">{{$data->email}}</dd>
+                    <dd class="col-auto flex-shrink-1 flex-grow-1">{{$user->email}}</dd>
                   </dl>
                   <dl class="d-flex w-100 my-0">
                     <dt class="col-auto pe-2">Billing Address:</dt>
-                    <dd class="col-auto flex-shrink-1 flex-grow-1">{{$data->address}}</dd>
+                    <dd class="col-auto flex-shrink-1 flex-grow-1">{{$user->address}}</dd>
                   </dl>
                 </div>
               </div>
@@ -113,7 +113,7 @@
             <div class="clear-fix"></div>
             <div class="row text-center">
               <h3 class="text-center my-2 pt-3">You Have a pending Bill Amount of:
-                <span class="text-muted">&#x20B1; 123356</span>
+                <span class="text-muted">&#x20B1; {{ $bills->where('status', 'pending')->sum('amount') }} </span>
               </h3>
             </div>
             <center>
@@ -148,13 +148,15 @@
                     </tr>
                   </thead>
                   <tbody>
-
+                    @foreach($bills as $bill)
+                      
                     <tr>
-                      <td>June</td>
-                      <td>2022</td>
-                      <td>Pending</td>
-                      <td>2000FCFA</td>
+                      <td>{{ $bill->month }}</td>
+                      <td>{{ $bill->month }}</td>
+                      <td>{{ $bill->status }}</td>
+                      <td>{{ $bill->amount }} FCFA</td>
                     </tr>
+                    @endforeach
 
                   </tbody>
                 </table>

@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BillingController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,17 +16,22 @@ use App\Http\Controllers\BillingController;
 |
 */
 
-Route::get('/', [BillingController::class, 'index']);
-Route::get('/login', [AuthController::class, 'login'])->middleware('alreadyLogin');
-Route::get('/register', [AuthController::class, 'registration'])->middleware('alreadyLogin');
-Route::get('/dashboard', [AuthController::class, 'dashboard'])->middleware('isLoggedIn');
-Route::get('/logout', [AuthController::class, 'logout']);
-Route::post('/register-user', [AuthController::class, 'registerUser'])->name('register-user');
-Route::post('/login-user', [AuthController::class, 'loginUser'])->name('login-user');
-Route::get('/admin/login', [AuthController::class, 'adminLogin']);
-Route::get('/create-bills', [BillingController::class, 'showCreateBills']);
-Route::post('/add-bills', [BillingController::class, 'addBill'])->name('add-bills');
-Route::get('/bills', [BillingController::class, 'bills']);
 
+Route::middleware('auth')->group(function () {
+    Route::get('/home', [BillingController::class, 'index']);
+    Route::get('/bills', [BillingController::class, 'bills']);
+    Route::middleware('admin')->prefix('admin')->group(function () {
+        Route::get('/', [AdminController::class, 'home'])->name('admin.home');
+        Route::get('bills', [AdminController::class, 'bills'])->name('admin.bills'); 
+        Route::post('add-bills', [AdminController::class, 'addBill'])->name('add-bills');
+        Route::get('create-bills', [AdminController::class, 'showCreateBills'])->name('admin.createbills');
+        Route::get('settings', [AdminController::class, 'showSettings'])->name('admin.settings');
+        Route::put('settings', [AdminController::class, 'settings']);
+    });
+});
 
 // Route::post('/allBills', [BillingController::class, 'show']);
+
+Auth::routes();
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

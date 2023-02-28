@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
 
-</head>
+@extends('layouts.app')
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
@@ -207,7 +199,7 @@
     }
 </style>
 
-<body>
+@section('content')
     <section>
 
         <span></span>
@@ -341,14 +333,14 @@
         <div class="signin">
             <div class="content">
                 <h2>SIGN IN</h2>
-                <form action="{{route('login-user')}}" method="post">
+                <form action="{{route('login')}}" method="post">
+                    @csrf
                     @if(Session::has('success'))
                     <div class="success">{{Session::get('success')}}</div>
                     @endif
                     @if(Session::has('failed'))
                     <div class="err">{{Session::get('failed')}}</div>
                     @endif
-                    @csrf
                     <div class="form">
                         <div class="inputBx">
                             <input type="text" autocomplete="off" class="input" name="email" value="{{old('email')}}">
@@ -373,6 +365,4 @@
             </div>
         </div>
     </section>
-</body>
-
-</html>
+    @endsection

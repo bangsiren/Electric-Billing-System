@@ -334,7 +334,7 @@
         <div class="signin">
             <div class="content">
                 <h2>Registration </h2>
-                <form action="{{route('register-user')}}" method="post">
+                <form action="{{route('register')}}" method="post">
                     @if(Session::has('success'))
                     <div class="success">{{Session::get('success')}}</div>
                     @endif

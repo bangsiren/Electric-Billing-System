@@ -72,6 +72,12 @@
                         <div class="card-body">
                             <div class="container-fluid">
                                 <form class="form-horizontal" method="POST" action="">
+                                    @if(Session::has('success'))
+                                    <div class="success">{{Session::get('success')}}</div>
+                                    @endif
+                                    @if(Session::has('failed'))
+                                    <div class="error">{{Session::get('failed')}}</div>
+                                    @endif
                                     @csrf
 
                                     <div class="mb-3 ">

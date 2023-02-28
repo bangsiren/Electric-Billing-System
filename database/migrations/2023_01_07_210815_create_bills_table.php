@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('customerId');
+            $table->foreignId('user_id');
             $table->integer('initial');
             $table->integer('final');
             $table->string('month');
             $table->string('year');
-            // $table->integer('units');
-            // $table->integer('amount');
-            // $table->string('status');
-            // $table->unique(array('customerId', 'month', 'year'));
+            $table->integer('units');
+            $table->float('amount');
+            $table->string('status');
+            // $table->unique(array('user_id', 'month', 'year'));
             $table->timestamps();
         });
     }

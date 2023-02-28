@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <style>
@@ -20,12 +20,12 @@
     color: red;
   }
 </style>
-<div class="container contain">
-  <div class="row first-box">
-    <div class="col-md-8 col-md-offset-2 box mt-5">
+<div class="">
+  
+    <div class="col-md-12 col-md-offset-2 box mt-5">
       <div class="card rounded-0 shadow text-reset">
         <div class="card-header">
-          <div class="card-title h3 my-2 text-center fw-bold">Welcome, Administrator!</div>
+          <div class="card-title h3 my-2 text-center fw-bold">Welcome, Administrator! {{auth()->user()->name}}</div>
         </div>
 
         <div class="card-body">
@@ -55,10 +55,16 @@
                 <div class="container-fluid">
                   <!-- Text input-->
                   <div class="mb-3">
-                    <label class="control-label" for="customerId">Customer Id</label>
-                    <input name="customerId" placeholder="" class="form-control rounded-0" value="{{old('customerId')}}"
-                      type="text">
-                      <p class="error">@error('customerId') {{$message}} @enderror</p>
+                    <label class="control-label" for="user_id">Customer Id</label>
+                    <select name="user_id" id="user_id" class="form-control rounded-0" value="{{old('user_id')}}" required>
+                      @foreach($users as $user)
+                      <option value="{{ $user->id }}"> {{ $user->name }}</option>
+                      @endforeach
+                    </select>
+                    <p class="error">@error('user_id') {{$message}} @enderror</p>
+                    {{-- <input name="user_id" placeholder="" class="form-control rounded-0" value="{{old('user_id')}}"
+                      type="text"> --}}
+                      
                   </div>
 
                   <!-- Text input-->
@@ -128,36 +134,9 @@
                 </div>
               {{-- </fieldset> --}}
             </form>
-            <form class="form-inline" action="" method="POST">
-              @csrf
-
-              <fieldset class="border pb-3 mb-3">
-
-                <!-- Form Name -->
-                <legend class="w-auto mx-3 px-4 border-0 mt-n4 h4 fw-bolder">Update Electricty Rate</legend>
-                <div class="container-fluid">
-                  <p class="current">Current Rate = <span>&#x20B1; </span></p>
-
-                  <!-- Text input-->
-                  <div class="mb-3">
-                    <label class="control-label" for="rate">New Rate</label>
-                    <input id="rate" name="rate" placeholder="" class="form-control rounded-0 text-end"
-                      type="number" step="any">
-                  </div>
-                  <!-- Button -->
-                  <div class="mb-3">
-                    <div class="d-grid">
-                      
-                      <button type="submit" class="btn btn-primary bg-gradient rounded-0">Update</button>
-                    </div>
-                  </div>
-                </div>
-              </fieldset>
-            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 @endsection
