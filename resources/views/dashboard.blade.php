@@ -144,7 +144,8 @@
                                 ...
                               </div>
                               <div class="modal-footer">
-                                <button type="button" style="background-color: #317874 " class="btn btn-primary">Next</button>
+                                <button type="button" style="background-color: #317874 "
+                                  class="btn btn-primary">Next</button>
                               </div>
                             </div>
                           </div>
