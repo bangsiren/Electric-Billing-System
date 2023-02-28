@@ -15,4 +15,7 @@ class BillingController extends Controller
             'user' => Auth::user()
         ]);
     }
+    public function showPayment() {
+        return view('pay');
+    }
 }

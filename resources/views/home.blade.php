@@ -48,7 +48,10 @@
             text-decoration: none;
             text-transform: uppercase;
         }
-
+        .login-btn {
+            background-color: #317874;
+            padding: 10px 50px;
+        }
         .m-b-md {
             margin-bottom: 30px;
         }
@@ -60,7 +63,7 @@
     </style>
 
 
-    <div class="flex-center position-ref full-height">
+    <div class="flex-center  position-ref full-height">
 
         <div class="content">
             <div class="title m-b-md">
@@ -68,9 +71,8 @@
                 <p class="sub">Simple PHP Project using Laravel 9 Framework</p>
             </div>
             <div class="text-center">
-                <a href="{{url('/admin')}}"
-                    class="btn btn-lg btn-primary bg-gradient bg-primary rounded-pill px-4 fw-bolder">Login to Admin
-                    card</a>
+                <a href="{{url('/admin')}}"   
+                    class="btn btn-lg login-btn  rounded-pill px-4 fw-bolder">Login</a>
             </div>
         </div>
     </div>

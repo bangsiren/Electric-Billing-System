@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth')->group(function () {
     Route::get('/home', [BillingController::class, 'index']);
     Route::get('/bills', [BillingController::class, 'bills']);
+    Route::get('/pay', [BillingController::class, 'showPayment']);
     Route::middleware('admin')->prefix('admin')->group(function () {
         Route::get('/', [AdminController::class, 'home'])->name('admin.home');
         Route::get('bills', [AdminController::class, 'bills'])->name('admin.bills'); 

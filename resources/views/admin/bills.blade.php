@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
-<table class="table">
+<table class="table table-bordered table-hover table-striped">
 
-    <thead>
-        <tr>
+    <thead style = "background-color: #317874 ">
+        <tr class="text-white">
             <th>
                 Id
             </th>
@@ -37,36 +37,37 @@
     <tbody>
         @foreach ($bills as $bill)
         <tr>
-            <td>
+            <td class="py2">
                 {{ $bill->id }}
             </td>
-            <td>
+            <td class="py2">
                 {{ $bill->initial }}
             </td>
-            <td>
+            <td class="py2">
                 {{ $bill->final }}
             </td>
-            <td>
+            <td class="py2">
                 {{ $bill->month }}
             </td>
-            <td>
+            <td class="py2">
                 {{ $bill->year }}
             </td>
-            <td>
+            <td class="py2">
                 {{ $bill->units }}
             </td>
-            <td>
+            <td class="py2">
                 {{ $bill->amount }}
             </td>
-            <td>
+            <td class="py2">
                 {{ $bill->status }}
             </td>
-            <td>
+            <td class="py2">
                 {{$bill->user->name}}
             </td>
         </tr>
         @endforeach
     </tbody>
 </table>
+
 
 @endsection

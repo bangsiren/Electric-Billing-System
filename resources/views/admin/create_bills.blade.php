@@ -55,7 +55,7 @@
                 <div class="container-fluid">
                   <!-- Text input-->
                   <div class="mb-3">
-                    <label class="control-label" for="user_id">Customer Id</label>
+                    <label class="control-label" for="user_id"></label>Registered Customers
                     <select name="user_id" id="user_id" class="form-control rounded-0" value="{{old('user_id')}}" required>
                       @foreach($users as $user)
                       <option value="{{ $user->id }}"> {{ $user->name }}</option>
@@ -136,7 +136,7 @@
                   <!-- Button -->
                   <div class="mb-3">
                     <div class="d-grid">
-                      <button type="submit" class="btn btn-primary bg-gradient rounded-0">Submit</button>
+                      <button style="background-color: #317874 " type="submit" class="btn btn-primary  rounded-0">Submit</button>
                     </div>
                   </div>
                 </div>

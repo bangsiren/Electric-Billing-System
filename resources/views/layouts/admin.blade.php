@@ -25,6 +25,15 @@
         width: 100%;
         height: 100vh;
     }
+    .nav-link,
+    .btn-link {
+        color: #317874;
+        font-size: 20px;
+    }
+    .nav-link:hover {
+       color: black
+    }
+
 </style>
 <body>
     <div id="app" class="container mx-auto py-4">
@@ -54,12 +63,12 @@
                 <li class="nav-item">
                     <form action="/logout" method="POST" class="inline">
                         @csrf
-                        <button type="submit" class="btn btn-link"><i class="fa-solid fa-door-closed"></i>Logout</button>
+                        <button  type="submit" class="btn btn-link"><i class="fa-solid fa-door-closed"></i>Logout</button>
                     </form>
                 </li>
             </ul>
         </div>
-        <div class="">
+        <div class="mt-5">
             @yield('content')
         </div>
     </div>
