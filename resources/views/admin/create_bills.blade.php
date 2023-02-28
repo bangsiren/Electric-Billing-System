@@ -84,6 +84,14 @@
                     <p class="error">@error('final') {{$message}} @enderror</p>
                   </div>
 
+                  <div class="mb-3">
+                    <label class="control-label" for="rate">Rate</label>
+                    <input  name="rate" placeholder="" value="{{old('rate')}}" class="form-control rounded-0 text-end" 
+                      type="number" step="any">
+                    <p class="error">@error('rate') {{$message}} @enderror</p>
+                  </div>
+
+
                   <!-- Select Basic -->
                   <div class="mb-3">
                     <label class="control-label" for="month">Month</label>

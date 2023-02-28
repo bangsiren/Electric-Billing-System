@@ -29,7 +29,7 @@ class UserFactory extends Factory
 
     public function admin()
     {
-        return $this->state(['is_admin' => true]);
+        return $this->state(['is_admin' => true, 'rate' => 5]);
     }
 
     /**

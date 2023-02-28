@@ -31,6 +31,7 @@ class AdminController extends Controller
             'initial' => 'required',
             'final' => 'required',
             'month' => 'required',
+            'rate' => ['required', 'min:0', 'integer'],
             'year' => 'required',
         ]);
 
@@ -41,11 +42,9 @@ class AdminController extends Controller
         $bill->month = $request->month;
         $bill->year = $request->year;
         $bill->units = (int) $bill->final - (int) $bill->initial;
-        $admin = Auth::user();
-
-        $rate = $admin->rate;
-        $bill->amount = $bill->units * $rate;
-        $bill->status = 'Unpaid';
+       
+        $bill->amount = $bill->units * $request->rate;
+        $bill->status = 'pending';
         $res = $bill->save();
         if ($res) {
             return redirect('/admin/bills');

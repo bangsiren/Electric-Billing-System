@@ -11,8 +11,7 @@ class BillingController extends Controller
         $bills = Auth::user()->bills; 
 
 
-        return view('dashboard', [
-            'bills' => $bills, 
+        return view('dashboard', ['bills' => $bills, 
             'user' => Auth::user()
         ]);
     }
