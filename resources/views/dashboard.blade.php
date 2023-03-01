@@ -178,8 +178,8 @@
                       <!-- Button -->
                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mb-3">
                         <div class="d-grid">
-                          <button style="background-color: #317874 " type="submit"
-                            class="btn btn-sm text-white rounded-0 bg-gradient">Download</button>
+                          <a href="{{ URL::to('/bills_pdf') }}" style="background-color: #317874 " type="submit"
+                            class="btn btn-sm text-white rounded-0 bg-gradient">Download</a>
                         </div>
                       </div>
 
