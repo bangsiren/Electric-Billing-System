@@ -1,3 +1,4 @@
+
 <x-layout>
 
     <!-- Styles -->
@@ -68,7 +69,7 @@
         <div class="content">
             <div class="title m-b-md">
                 Online Electricity Billing System
-                <p class="sub">Simple PHP Project using Laravel 9 Framework</p>
+                <p class="sub animate__animated animate__bounce">Simple PHP Project using Laravel 9 Framework</p>
             </div>
             <div class="text-center">
                 <a href="{{url('/admin')}}"   
