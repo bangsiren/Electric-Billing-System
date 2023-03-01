@@ -12,9 +12,6 @@ window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-window.Popper = require('@popperjs/core').default;
-window.$ = window.jQuery = require('jquery');
-window.animate = require('animate.css');
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
