@@ -28,7 +28,7 @@
 
 <body class="mb-48">
     <nav class="flex justify-between bg-laravel items-center mb-4 h-24">
-        <a href="/"><img class="w-24" src={{asset("images/logo.png")}} alt="" class="logo" /></a>
+        <a href="/"><img class="" style="width: 200px; height:90px;" src={{URL("images/ebilllogo.png")}} alt="" class="logo" /></a>
         <ul class="flex space-x-6 mr-6 text-lg">
             @auth
             <li>
@@ -36,7 +36,7 @@
                     Welcome {{auth()->user()->name}}
                 </span>
             </li>
-
+             
             {{-- <li>
                 <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
                     Manage Listings</a>

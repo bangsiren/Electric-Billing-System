@@ -59,7 +59,7 @@
               </fieldset>
               <div class="clear-fix"></div>
               <div class="row text-center">
-                <h3 class="text-center my-2 pt-3">You Have a pending Bill Amount of:
+                <h3 class="text-center my-2 pt-3 ">You Have a pending Bill Amount of:
                   <span class="text-muted"> {{ $bills->where('status', 'pending')->sum('amount') }} FCFA </span>
                 </h3>
               </div>
