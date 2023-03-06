@@ -64,3 +64,11 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## domPDF
+
+install domPDF using composer [composer require barryvdh/laravel-dompdf]
+
+Configure DomPDF Package in Laravel [ providers --->  Barryvdh\DomPDF\ServiceProvider::class]  [ aliases ----> 'PDF' => Barryvdh\DomPDF\Facade::class]
+
+Use the loadview function to load the file you are to donwload in pdf format.
