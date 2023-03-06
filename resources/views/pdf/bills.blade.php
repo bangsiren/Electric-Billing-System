@@ -69,8 +69,6 @@
                 </center>
                 <div class="clear-fix"></div>
   
-
-  
                 <div class="clear-fix py-3"></div>
                 <fieldset class="border pb-4">
                   <legend class="w-auto mx-3 border-0 mb-0 px-4">Issued Bills</legend>

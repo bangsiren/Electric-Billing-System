@@ -32,7 +32,4 @@ class BillingController extends Controller
         // download PDF file with download method
         return $pdf->download('bills.pdf');
       }
-      public function showPDF(){
-        return view('pdf.bills');
-    }
 }

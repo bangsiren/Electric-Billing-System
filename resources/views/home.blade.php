@@ -68,8 +68,8 @@
 
         <div class="content">
             <div class="title m-b-md">
-                Online Electricity Billing System
-                <p class="sub animate__animated animate__bounce">Simple PHP Project using Laravel 9 Framework</p>
+                 Electricity Billing System
+                <p class="sub animate__animated animate__bounce"> Electricity Billing Project using Laravel 9 Framework</p>
             </div>
             <div class="text-center">
                 <a href="{{url('/admin')}}"   
